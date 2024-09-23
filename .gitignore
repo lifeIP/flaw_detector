@@ -1,0 +1,8 @@
+weights/
+logs/
+.venv/
+__pycache__/
+*.png
+*.jpg
+*.avi
+*.zip

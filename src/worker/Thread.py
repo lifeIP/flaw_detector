@@ -84,11 +84,11 @@ class Thread(QThread):
         model = Model()
         flaw_detector = FlawDetectorPredict(model, self.detector_id)
         
-        self.cap = cv.VideoCapture(self.cam_id)
-        self.cap.set(cv.CAP_PROP_FRAME_HEIGHT, 640)
-        self.cap.set(cv.CAP_PROP_FRAME_WIDTH, 480)
-        self.cap.set(28, self.fokus)
-        # self.cap = cv.VideoCapture("./video/3.avi")
+        # self.cap = cv.VideoCapture(self.cam_id)
+        # self.cap.set(cv.CAP_PROP_FRAME_HEIGHT, 640)
+        # self.cap.set(cv.CAP_PROP_FRAME_WIDTH, 480)
+        # self.cap.set(28, self.fokus)
+        self.cap = cv.VideoCapture("./video/3.avi")
 
         while True:
             # self.start_time = time.time()

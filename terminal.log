@@ -1,24 +1,25 @@
->>>> Запуск программы в 24/09/24    14:28:00
-2024-09-24 14:28:01.653836: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
-2024-09-24 14:28:02.149594: E tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:9342] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-2024-09-24 14:28:02.149703: E tensorflow/compiler/xla/stream_executor/cuda/cuda_fft.cc:609] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-2024-09-24 14:28:02.152458: E tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:1518] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-2024-09-24 14:28:02.385570: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
-2024-09-24 14:28:02.387058: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+>>>> Запуск программы в 25/09/24    12:06:09
+2024-09-25 12:06:09.953463: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2024-09-25 12:06:10.015859: E tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:9342] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-09-25 12:06:10.015937: E tensorflow/compiler/xla/stream_executor/cuda/cuda_fft.cc:609] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-09-25 12:06:10.015999: E tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:1518] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-09-25 12:06:10.025536: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2024-09-25 12:06:10.025848: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-09-24 14:28:04.132005: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-09-25 12:06:11.482052: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
 Importing plotly failed. Interactive plots will not work.
-2024-09-24 14:28:14.069473: E tensorflow/compiler/xla/stream_executor/cuda/cuda_driver.cc:268] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2024-09-25 12:06:19.216541: E tensorflow/compiler/xla/stream_executor/cuda/cuda_driver.cc:268] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2024-09-25 12:06:19.397658: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 134217728 exceeds 10% of free system memory.
+2024-09-25 12:06:19.442763: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 134217728 exceeds 10% of free system memory.
+2024-09-25 12:06:19.542259: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 134217728 exceeds 10% of free system memory.
+2024-09-25 12:06:19.623215: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 134217728 exceeds 10% of free system memory.
+2024-09-25 12:06:19.623336: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 134217728 exceeds 10% of free system memory.
 2.14.1
 [KeOps] Warning : Cuda libraries were not detected on the system or could not be loaded ; using cpu only mode
 main  init  start
 main  initUI  start
 Model: "sequential"
 _________________________________________________________________
-Model: "sequential"
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
  Layer (type)                Output Shape              Param #   
 =================================================================
  conv2d (Conv2D)             (None, 32, 32, 64)        3136      
@@ -32,16 +33,20 @@ _________________________________________________________________
  dense (Dense)               (None, 1024)              33555456  
                                                                  
 =================================================================
- conv2d (Conv2D)             (None, 32, 32, 64)        3136      
 Total params: 34738880 (132.52 MB)
-                                                                 
 Trainable params: 34738880 (132.52 MB)
+Model: "sequential"
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+None
+=================================================================
+ conv2d (Conv2D)             (None, 32, 32, 64)        3136      
+                                                                 
  conv2d_1 (Conv2D)           (None, 16, 16, 128)       131200    
                                                                  
-Non-trainable params: 0 (0.00 Byte)
  conv2d_2 (Conv2D)           (None, 8, 8, 512)         1049088   
-_________________________________________________________________
-None
                                                                  
  flatten (Flatten)           (None, 32768)             0         
                                                                  
@@ -97,97 +102,98 @@ main  initUI  end
 main  init  end
 Model: "sequential_1"
 _________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
- dense_1 (Dense)             (None, 32768)             33587200  
-                                                                 
- reshape (Reshape)           (None, 8, 8, 512)         0         
-                                                                 
- conv2d_transpose (Conv2DTr  (None, 16, 16, 256)       2097408   
- anspose)                                                        
-                                                                 
- conv2d_transpose_1 (Conv2D  (None, 32, 32, 64)        262208    
- Transpose)                                                      
-                                                                 
-Model: "sequential_1"
- conv2d_transpose_2 (Conv2D  (None, 64, 64, 3)         3075      
- Transpose)                                                      
-Model: "sequential_1"
-_________________________________________________________________
-                                                                 
-_________________________________________________________________
-=================================================================
- Layer (type)                Output Shape              Param #   
-Total params: 35949891 (137.14 MB)
-=================================================================
 Model: "sequential_1"
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
- dense_1 (Dense)             (None, 32768)             33587200  
-                                                                 
+=================================================================
  Layer (type)                Output Shape              Param #   
 =================================================================
-=================================================================
- reshape (Reshape)           (None, 8, 8, 512)         0         
-Trainable params: 35949891 (137.14 MB)
-Non-trainable params: 0 (0.00 Byte)
-_________________________________________________________________
  dense_1 (Dense)             (None, 32768)             33587200  
                                                                  
-None
-                                                                 
- conv2d_transpose (Conv2DTr  (None, 16, 16, 256)       2097408   
+ dense_1 (Dense)             (None, 32768)             33587200  
  reshape (Reshape)           (None, 8, 8, 512)         0         
                                                                  
- anspose)                                                        
+                                                                 
+ reshape (Reshape)           (None, 8, 8, 512)         0         
  conv2d_transpose (Conv2DTr  (None, 16, 16, 256)       2097408   
                                                                  
  anspose)                                                        
+                                                                 
+ conv2d_transpose (Conv2DTr  (None, 16, 16, 256)       2097408   
  conv2d_transpose_1 (Conv2D  (None, 32, 32, 64)        262208    
-Current threshold value is:  0.015
+ anspose)                                                        
+                                                                 
+ Transpose)                                                      
+ conv2d_transpose_1 (Conv2D  (None, 32, 32, 64)        262208    
                                                                  
  Transpose)                                                      
                                                                  
- conv2d_transpose_1 (Conv2D  (None, 32, 32, 64)        262208    
+ conv2d_transpose_2 (Conv2D  (None, 64, 64, 3)         3075      
+ conv2d_transpose_2 (Conv2D  (None, 64, 64, 3)         3075      
+ Transpose)                                                      
+                                                                 
+ Transpose)                                                      
+=================================================================
+                                                                 
+Total params: 35949891 (137.14 MB)
+Trainable params: 35949891 (137.14 MB)
+=================================================================
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Model: "sequential_1"
+Total params: 35949891 (137.14 MB)
+None
+_________________________________________________________________
+Trainable params: 35949891 (137.14 MB)
+ Layer (type)                Output Shape              Param #   
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Current threshold value is:  0.015
+=================================================================
+None
  dense_1 (Dense)             (None, 32768)             33587200  
                                                                  
- conv2d_transpose_2 (Conv2D  (None, 64, 64, 3)         3075      
  reshape (Reshape)           (None, 8, 8, 512)         0         
                                                                  
- Transpose)                                                      
  conv2d_transpose (Conv2DTr  (None, 16, 16, 256)       2097408   
- Transpose)                                                      
-                                                                 
  anspose)                                                        
                                                                  
-                                                                 
- conv2d_transpose_2 (Conv2D  (None, 64, 64, 3)         3075      
+Current threshold value is:  0.015
  conv2d_transpose_1 (Conv2D  (None, 32, 32, 64)        262208    
  Transpose)                                                      
- Transpose)                                                      
                                                                  
-                                                                 
-=================================================================
  conv2d_transpose_2 (Conv2D  (None, 64, 64, 3)         3075      
-=================================================================
  Transpose)                                                      
                                                                  
 =================================================================
 Total params: 35949891 (137.14 MB)
+Trainable params: 35949891 (137.14 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+None
+Current threshold value is:  0.015
+Model: "sequential_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_1 (Dense)             (None, 32768)             33587200  
+                                                                 
+ reshape (Reshape)           (None, 8, 8, 512)         0         
+                                                                 
+ conv2d_transpose (Conv2DTr  (None, 16, 16, 256)       2097408   
+ anspose)                                                        
+                                                                 
+ conv2d_transpose_1 (Conv2D  (None, 32, 32, 64)        262208    
+ Transpose)                                                      
+                                                                 
+ conv2d_transpose_2 (Conv2D  (None, 64, 64, 3)         3075      
+ Transpose)                                                      
+                                                                 
+=================================================================
 Total params: 35949891 (137.14 MB)
 Trainable params: 35949891 (137.14 MB)
 Non-trainable params: 0 (0.00 Byte)
 _________________________________________________________________
-Total params: 35949891 (137.14 MB)
-Trainable params: 35949891 (137.14 MB)
-None
-Trainable params: 35949891 (137.14 MB)
-Non-trainable params: 0 (0.00 Byte)
-_________________________________________________________________
-Non-trainable params: 0 (0.00 Byte)
-Current threshold value is:  0.015
-None
-_________________________________________________________________
 WARNING:tensorflow:No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
 WARNING:tensorflow:No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
 WARNING:tensorflow:No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
@@ -197,7 +203,6 @@ WARNING:tensorflow:No training configuration found in the save file, so the mode
 WARNING:tensorflow:No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
 WARNING:tensorflow:No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
 None
-Current threshold value is:  0.015
 Current threshold value is:  0.015
 QThread: Destroyed while thread is still running
->>>> Закрытие программы в 24/09/24    14:28:52
+>>>> Закрытие программы в 25/09/24    12:07:06

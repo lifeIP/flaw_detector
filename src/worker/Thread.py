@@ -84,17 +84,20 @@ class Thread(QThread):
         model = Model()
         flaw_detector = FlawDetectorPredict(model, self.detector_id)
         
-        # self.cap = cv.VideoCapture(self.cam_id)
-        # self.cap.set(cv.CAP_PROP_FRAME_HEIGHT, 640)
-        # self.cap.set(cv.CAP_PROP_FRAME_WIDTH, 480)
-        # self.cap.set(28, self.fokus)
-        self.cap = cv.VideoCapture("./video/3.avi")
+        self.cap = cv.VideoCapture(self.cam_id)
+        self.cap.set(cv.CAP_PROP_FRAME_HEIGHT, 640)
+        self.cap.set(cv.CAP_PROP_FRAME_WIDTH, 480)
+        self.cap.set(28, self.fokus)
+        # self.cap = cv.VideoCapture("./video/3.avi")
 
         while True:
             # self.start_time = time.time()
             ret, src = self.cap.read(cv.IMREAD_GRAYSCALE)
             if not ret: continue
 
+            # import time
+            # cv.imwrite(f"./detector/{self.detector_id}/save_test_data/{time.time()}.png", src)
+            
             src_copy = src.copy()
             h, w = src.shape[:2]
 
@@ -102,7 +105,7 @@ class Thread(QThread):
             cv.line(src_copy, (w - self.right, 0), (w - self.right, h), (0,255,0), 4)     
             
 
-            src = src[180: h - 200, self.left: w-self.right]
+            src = src[150: h - 150, self.left: w-self.right]
             src = cv.blur(src, (1,5))
             h, w = src.shape[:2]
 
@@ -115,7 +118,7 @@ class Thread(QThread):
                 cv.imwrite(f"./detector/{self.detector_id}/train/good/{time.time()}.png", sharpen_img)
                 self.counter += 1
                 print(self.counter, "/", self.max_counter)
-                if self.counter >= self.max_counter: 
+                if self.counter >= self.max_counter:
                     self.is_train = False
                     time.sleep(3)
                     self.dataset_done.emit(self.detector_id)

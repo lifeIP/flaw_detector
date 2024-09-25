@@ -95,8 +95,8 @@ class Thread(QThread):
             ret, src = self.cap.read(cv.IMREAD_GRAYSCALE)
             if not ret: continue
 
-            # import time
-            # cv.imwrite(f"./detector/{self.detector_id}/save_test_data/{time.time()}.png", src)
+            import time
+            cv.imwrite(f"./detector/{self.detector_id}/save_test_data/{time.time()}.png", src)
             
             src_copy = src.copy()
             h, w = src.shape[:2]
